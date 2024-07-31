@@ -3,6 +3,8 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import SideBar from "@/components/Sidebar";
+import { Toaster } from "@/components/ui/toaster";
+import { ThemeProvider } from "@/components/theme-provider"
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,11 +21,24 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Navbar />
-        <div className="flex">
-         <div className="hidden md:block bg-secondary w-[20%] "><SideBar /></div>
-         <div className="p-5 w-full md:max-[1140px]">{children}</div>
-        </div>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <Navbar />
+          <div className="flex">
+            <div className="hidden md:block bg-secondary w-[20%] ">
+              <SideBar />
+            </div>
+
+            <div className="p-5 w-full md:max-[1140px]">
+              {children}
+            </div>
+          </div>
+          <Toaster />
+        </ThemeProvider>
       </body>
     </html>
   );

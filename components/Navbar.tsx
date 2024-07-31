@@ -7,9 +7,9 @@ import {
     DropdownMenuLabel,
     DropdownMenuSeparator,
     DropdownMenuTrigger,
-  } from "@/components/ui/dropdown-menu"
-  
+} from "@/components/ui/dropdown-menu"
 import Link from "next/link";
+import { ModeToggle } from "./toggler";
 
 const Navbar = () => {
     return (
@@ -38,6 +38,8 @@ const Navbar = () => {
                     </Link>
                 </Menubar>
             </div>
+            <div className="flex items-center">
+            <ModeToggle />
             <DropdownMenu>
                 <DropdownMenuTrigger>
                     <Avatar>
@@ -52,6 +54,8 @@ const Navbar = () => {
                     <DropdownMenuItem>Logout</DropdownMenuItem>
                 </DropdownMenuContent>
             </DropdownMenu>
+            </div>
+
         </div>
     );
 }
