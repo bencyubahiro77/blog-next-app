@@ -21,7 +21,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <Navbar />
         <div className="flex">
-         <div className="hidden md:block h-[100vh] bg-secondary w-[20%]"><SideBar /></div>
+         <div className="hidden md:block bg-secondary w-[20%] "><SideBar /></div>
          <div className="p-5 w-full md:max-[1140px]">{children}</div>
         </div>
       </body>
