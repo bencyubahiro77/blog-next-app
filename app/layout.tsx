@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/Navbar";
-import SideBar from "@/components/Sidebar";
 import { Toaster } from "@/components/ui/toaster";
 import { ThemeProvider } from "@/components/theme-provider"
 
@@ -27,16 +25,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <Navbar />
-          <div className="flex">
-            <div className="hidden md:block bg-secondary w-[20%] ">
-              <SideBar />
-            </div>
-
-            <div className="p-5 w-full md:max-[1140px]">
-              {children}
-            </div>
-          </div>
+          {children}
           <Toaster />
         </ThemeProvider>
       </body>

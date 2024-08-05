@@ -51,7 +51,9 @@ const Navbar = () => {
                     <DropdownMenuLabel>My Account</DropdownMenuLabel>
                     <DropdownMenuSeparator />
                     <DropdownMenuItem>Profile</DropdownMenuItem>
-                    <DropdownMenuItem>Logout</DropdownMenuItem>
+                    <Link href="/auth">
+                      <DropdownMenuItem>Logout</DropdownMenuItem>
+                    </Link>
                 </DropdownMenuContent>
             </DropdownMenu>
             </div>
